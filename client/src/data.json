@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Asus Zenbook Flip S",
+    "description": "This is a description",
+    "image": "/images/asus_laptop.jpg",
+    "price": "$288.00"
+  },
+  {
+    "id": 2,
+    "name": "Canon Camera",
+    "description": "This is a description",
+    "image": "/images/canon_cam.jpg",
+    "price": "$150.00"
+  },
+  {
+    "id": 3,
+    "name": "Dell XPS 15",
+    "description": "Laptop",
+    "image": "/images/dellxps15.jpg",
+    "price": "$300.00"
+  },
+  {
+    "id": 4,
+    "name": "Earphone",
+    "description": "Description",
+    "image": "/images/earphones.jpg",
+    "price": "$150.00"
+  },
+  {
+    "id": 5,
+    "name": "Command Hats",
+    "description": "bla bla",
+    "image": "https://raw.githubusercontent.com/solodev/bootstrap-cards-shopping-cart/master/images/gear-hat.jpg",
+    "price": "$60.00"
+  },
+  {
+    "id": 6,
+    "name": "Mission T-Shirts Gear Image",
+    "description": "Mission T-Shirts Gear Image",
+    "image": "https://raw.githubusercontent.com/solodev/bootstrap-cards-shopping-cart/master/images/gear-tshirt.jpg",
+    "price": "$12.00"
+  },
+  {
+    "id": 7,
+    "name": "Gear Glasses",
+    "description": "Gear glasses",
+    "image": "https://raw.githubusercontent.com/solodev/bootstrap-cards-shopping-cart/master/images/gear-glasses.jpg",
+    "price": "$18.00"
+  }
+]
