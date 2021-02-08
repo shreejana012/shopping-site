@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.7.4
+    ports:
+      - "5672:5672"
+      - "15672:5672"
+  backend1:
+    build:
+      context: ./backend1
+      dockerfile: ./Dockerfile
+    image: "shrijana/app"
+    ports:
+      - "5001:5001"
+    links:
+      - rabbitmq
+  backend2:
+    env_file:
+        "./backend2/.env.local"
+    build:
+      context: ./backend2
+      dockerfile: ./Dockerfile
+    image: "shrijana/notification_api"
+    ports:
+      - "5002:5002"
+    links:
+      - rabbitmq
+  client:
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    image: "shrijana/client"
+    ports:
+      - "3000:3000"
