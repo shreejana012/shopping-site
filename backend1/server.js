@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // API calls
 app.post('/api/order', (req, res) => {
-  amqp.connect('amqp://guest:guest@localhost:5672/', function(error0, connection) {
+  amqp.connect('amqp://guest:guest@host.docker.internal:5672/', function(error0, connection) {
     if (error0) throw error0
     connection.createChannel(function(error1, channel) {
       if (error1) throw error1

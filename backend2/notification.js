@@ -2,10 +2,12 @@
 require('dotenv');
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+console.log(process.env.TWILIO_ACCOUNT_SID)
+console.log(process.env.TWILIO_AUTH_TOKEN)
 const client = require('twilio')(accountSid, authToken);
 let amqp = require('amqplib/callback_api');
 
-amqp.connect('amqp://localhost', function(error0, connection) {
+amqp.connect('amqp://guest:guest@host.docker.internal:5672/', function(error0, connection) {
   if (error0) throw error0
 
   connection.createChannel(function(error1, channel) {
@@ -19,7 +21,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
       client.messages.create(
         {
           body: `Dear ${content.name}, Your order from Online Shopping Site has been placed.`,
-          from: '+15005550006',
+          from: '+19374894317',
           to: `+977${content.number}`
         }).then((msg) => {
           console.log(msg)
