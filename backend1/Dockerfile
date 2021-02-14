@@ -7,12 +7,9 @@ LABEL maintainer = "shrijana460@gmail.com"
 WORKDIR /app
 
 COPY ["package.json", "package-lock.json", "./"]
-RUN ls
-COPY package.json /app
 RUN npm install
-RUN npm install -g nodemon
 COPY . .
-
+RUN ls node_modules
 EXPOSE 5001
 
 CMD ["node", "server.js"]

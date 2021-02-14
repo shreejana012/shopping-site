@@ -7,8 +7,7 @@ LABEL maintainer = "shrijana460@gmail.com"
 WORKDIR /app
 
 COPY ["package.json", "package-lock.json", "./"]
-RUN ls
-RUN npm install --production
+RUN npm install
 COPY . .
 
 EXPOSE 3000

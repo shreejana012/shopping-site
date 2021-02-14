@@ -13,6 +13,9 @@ services:
     image: "shrijana/app"
     ports:
       - "5001:5001"
+    volumes:
+      - ./backend1:/app/
+      - node_modules_1:/app/node_modules
     links:
       - rabbitmq
   backend2:
@@ -24,6 +27,9 @@ services:
     image: "shrijana/notification_api"
     ports:
       - "5002:5002"
+    volumes:
+      - ./backend2:/app/
+      - node_modules_2:/app/node_modules
     links:
       - rabbitmq
   client:
@@ -33,3 +39,6 @@ services:
     image: "shrijana/client"
     ports:
       - "3000:3000"
+volumes:
+  node_modules_1:
+  node_modules_2:
