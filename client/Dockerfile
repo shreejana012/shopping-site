@@ -5,11 +5,9 @@ LABEL description="This is the base docker image for the shopping site client"
 LABEL maintainer = "shrijana460@gmail.com"
 
 WORKDIR /app
-
-COPY ["package.json", "package-lock.json", "./"]
-RUN ls
-RUN npm install --production
-COPY . .
+COPY package.json /app
+RUN npm install
+COPY . /app
 
 EXPOSE 3000
 

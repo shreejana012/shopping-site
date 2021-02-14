@@ -1,19 +1,12 @@
-FROM node:14
+FROM node:12-alpine
+ENV NODE_ENV=production
 
-LABEL version="1.0"
-LABEL description="This is the base docker image for the shopping site notification API."
-LABEL maintainer = "shrijana460@gmail.com"
+WORKDIR /notification
 
-WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
 
-COPY ["package.json", "package-lock.json", "./"]
-COPY package.json /app
-RUN ls
-RUN npm install
-RUN npm install -g nodemon
+RUN npm install --production
 
 COPY . .
 
-EXPOSE 5002
-
-CMD ["node", "notification.js"]
+CMD [ "node", "notification.js" ]

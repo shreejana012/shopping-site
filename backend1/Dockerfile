@@ -1,18 +1,12 @@
-FROM node:14
+FROM node:12-alpine
+ENV NODE_ENV=production
 
-LABEL version="1.0"
-LABEL description="This is the base docker image for the shopping site order API."
-LABEL maintainer = "shrijana460@gmail.com"
+WORKDIR /order
 
-WORKDIR /app
+COPY ["package.json", "./"]
 
-COPY ["package.json", "package-lock.json", "./"]
-RUN ls
-COPY package.json /app
-RUN npm install
-RUN npm install -g nodemon
+RUN npm install --production
+
 COPY . .
 
-EXPOSE 5001
-
-CMD ["node", "server.js"]
+CMD [ "node", "server.js" ]
